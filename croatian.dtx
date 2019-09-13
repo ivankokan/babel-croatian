@@ -41,8 +41,17 @@
 %    code for the Croatian language definition file.
 %<*filedriver>
 \documentclass{ltxdoc}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
+\usepackage{fontspec}
+\usepackage{newunicodechar}
+\newunicodechar{Ǆ}{\iffontchar\font`Ǆ{Ǆ}\else{D\nobreak Ž}\fi}
+\newunicodechar{ǅ}{\iffontchar\font`ǅ{ǅ}\else{D\nobreak ž}\fi}
+\newunicodechar{ǆ}{\iffontchar\font`ǆ{ǆ}\else{d\nobreak ž}\fi}
+\newunicodechar{Ǉ}{\iffontchar\font`Ǉ{Ǉ}\else{L\nobreak J}\fi}
+\newunicodechar{ǈ}{\iffontchar\font`ǈ{ǈ}\else{L\nobreak j}\fi}
+\newunicodechar{ǉ}{\iffontchar\font`ǉ{ǉ}\else{l\nobreak j}\fi}
+\newunicodechar{Ǌ}{\iffontchar\font`Ǌ{Ǌ}\else{N\nobreak J}\fi}
+\newunicodechar{ǋ}{\iffontchar\font`ǋ{ǋ}\else{N\nobreak j}\fi}
+\newunicodechar{ǌ}{\iffontchar\font`ǌ{ǌ}\else{n\nobreak j}\fi}
 \title{The Croatian support for babel} % TODO
 \author{Ivan Kokan} % TODO
 \newcommand*\babel{\textsf{babel}}
@@ -92,7 +101,7 @@
   \SetString{\refname}{Literatura}
   \SetString{\abstractname}{Sažetak}
   \SetString{\bibname}{Bibliografija}
-  \SetString{\chaptername}{Poglavl\nobreak je}
+  \SetString{\chaptername}{Poglavǉe}
   \SetString{\appendixname}{Dodatak}
   \SetString{\contentsname}{Sadržaj}
   \SetString{\listfigurename}{Popis slika}
@@ -113,7 +122,7 @@
 \StartBabelCommands*{croatian}{date}
   [unicode, charset=utf8, fontenc=EU1 EU2]
   \SetStringLoop{month#1name}{%
-    siječn\nobreak ja,vel\nobreak jače,ožujka,travn\nobreak ja,svibn\nobreak ja,lipn\nobreak ja,srpn\nobreak ja,kolovoza,rujna,listopada,studenoga,prosinca}
+    siječǌa,veǉače,ožujka,travǌa,svibǌa,lipǌa,srpǌa,kolovoza,rujna,listopada,studenoga,prosinca}
 %    \end{macrocode}
 %    And now, the generic branch, using the LICR and assuming T1.
 %    \begin{macrocode}
