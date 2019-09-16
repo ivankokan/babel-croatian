@@ -125,7 +125,8 @@
 \StartBabelCommands*{croatian}{date}
   [unicode, charset=utf8, fontenc=EU1 EU2]
   \SetStringLoop{month#1name}{%
-    siječǌa,veǉače,ožujka,travǌa,svibǌa,lipǌa,srpǌa,kolovoza,rujna,listopada,studenoga,prosinca}
+    siječǌa,veǉače,ožujka,travǌa,svibǌa,lipǌa,srpǌa,%
+    kolovoza,rujna,listopada,studenoga,prosinca}
 %    \end{macrocode}
 %    And now, the generic branch, using the LICR and assuming T1.
 %    \begin{macrocode}
@@ -154,9 +155,12 @@
 
 \StartBabelCommands*{croatian}{date}
   \SetStringLoop{month#1name}{%
-    sije\v{c}n\nobreak ja,vel\nobreak ja\v{c}e,o\v{z}ujka,travn\nobreak ja,svibn\nobreak ja,lipn\nobreak ja,srpn\nobreak ja,kolovoza,rujna,listopada,studenoga,prosinca}
+    sije\v{c}n\nobreak ja,vel\nobreak ja\v{c}e,o\v{z}ujka,%
+    travn\nobreak ja,svibn\nobreak ja,lipn\nobreak ja,%
+    srpn\nobreak ja,kolovoza,rujna,listopada,studenoga,prosinca}
   \SetString\today{%
-    {\number\day}.~\@nameuse{month\romannumeral\month name} {\number\year}.}
+    {\number\day}.~\@nameuse{month\romannumeral\month name}
+    {\number\year}.}
 \EndBabelCommands
 %    \end{macrocode}
 % \end{macro}
