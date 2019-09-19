@@ -55,6 +55,7 @@
 \newunicodechar{Ǌ}{\iffontchar\font`Ǌ{Ǌ}\else{N\nobreak J}\fi}
 \newunicodechar{ǋ}{\iffontchar\font`ǋ{ǋ}\else{N\nobreak j}\fi}
 \newunicodechar{ǌ}{\iffontchar\font`ǌ{ǌ}\else{n\nobreak j}\fi}
+\usepackage[unicode,pdfstartpage={},pdfstartview=FitH,breaklinks]{hyperref}
 \title{The Croatian support for babel} % TODO
 \author{Ivan Kokan} % TODO
 \newcommand*\babel{\textsf{babel}}
@@ -92,6 +93,13 @@
 \ifx\l@croatian\@undefined
   \@nopatterns{Croatian}
   \adddialect\l@croatian0\fi
+%    \end{macrocode}
+%
+%    Hyphenation parameters are explicitly set.\footnote{Aligned with
+%    \url{https://ctan.org/pkg/hrhyph} patterns and \url{http://lebesgue.math.hr/~nenad/Diplomski/Maja_Ribaric_2011.pdf}.}
+%
+%    \begin{macrocode}
+\providehyphenmins{croatian}{22}
 %    \end{macrocode}
 %
 % \begin{macro}{\captionscroatian}
