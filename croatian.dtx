@@ -180,23 +180,18 @@
 %    needed for the Croatian language. The macro |\noextrascroatian| is
 %    used to cancel the actions of |\extrascroatian|.
 %
-%    \begin{macrocode}
-%
-%    \end{macrocode}
-%    We specify that the croatian group of shorthands should be used.
-%    These characters are `turned on' once, later their definition may
-%    vary. 
+%    For Croatian texts French spacing is switched on.\footnote{Recommendation
+%    from Damir Bralić} Respective pre-Croatian state is stored before that,
+%    and restored when Croatian is unselected.
 %    \begin{macrocode}
 \addto\extrascroatian{%
-  \bbl@nonfrenchspacing}
-%    \end{macrocode}
-%
-%    For Croatian texts |\frenchspacing| should be in effect. We
-%    make sure this is the case and reset it if necessary.
-%
-%    \begin{macrocode}
+  \newif\ifbbl@fs@precroatian\bbl@fs@precroatianfalse
+  \ifnum\the\sfcode`\.=\@m
+    \bbl@fs@precroatiantrue
+  \fi
+  \bbl@frenchspacing}
 \addto\noextrascroatian{%
-  \bbl@nonfrenchspacing}
+  \ifbbl@fs@precroatian\bbl@frenchspacing\else\bbl@nonfrenchspacing\fi}
 %    \end{macrocode}
 % \end{macro}
 % \end{macro}
