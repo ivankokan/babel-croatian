@@ -42,9 +42,22 @@
 %<*filedriver>
 \documentclass{ltxdoc}
 \usepackage{fontspec}
-\setmainfont{Arial}
-\setsansfont{Arial}
-\setmonofont{Consolas}
+\setmainfont[
+  Scale=0.88,
+  BoldFont=NotoSerif-Bold.ttf,
+  ItalicFont=NotoSerif-Italic.ttf,
+  BoldItalicFont=NotoSerif-BoldItalic.ttf]
+  {NotoSerif-Regular.ttf}
+\setsansfont[
+  Scale=0.88,
+  BoldFont=NotoSans-Bold.ttf,
+  ItalicFont=NotoSans-Italic.ttf,
+  BoldItalicFont=NotoSans-BoldItalic.ttf]
+  {NotoSans-Regular.ttf}
+\setmonofont[
+  Scale=0.88,
+  FakeStretch=0.95]
+  {NotoMono-Regular.ttf}
 \usepackage{newunicodechar}
 \newunicodechar{Ǆ}{\iffontchar\font`Ǆ{Ǆ}\else{D\nobreak Ž}\fi} % TODO move all this to extrascroatian and noextrascroatian
 \newunicodechar{ǅ}{\iffontchar\font`ǅ{ǅ}\else{D\nobreak ž}\fi}
