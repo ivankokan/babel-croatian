@@ -120,6 +120,8 @@
 % \begin{macro}{\captionscroatian}
 %    The macro |\captionscroatian| defines all strings used in the four
 %    standard documentclasses provided with \LaTeX.
+%    (Note that Unicode digraphs |ǉ| (|U+01C9|) and |ǌ| (U+01CC) are
+%    explicitly used.)
 %    \begin{macrocode}
 \StartBabelCommands*{croatian}{captions}
   [unicode, charset=utf8, fontenc=EU1 EU2]
@@ -152,6 +154,8 @@
     kolovoza,rujna,listopada,studenoga,prosinca}
 %    \end{macrocode}
 %    And now, the generic branch, using the LICR and assuming T1.
+%    (Note that digraphs are emulated as pairs of characters with
+%    |\nobreak| between them.)
 %    \begin{macrocode}
 \StartBabelCommands*{croatian}{captions}
   \SetString{\prefacename}{Predgovor}
