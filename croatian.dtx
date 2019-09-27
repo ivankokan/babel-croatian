@@ -201,13 +201,23 @@
 %    For Croatian texts French spacing is switched on.\footnote{Recommendation
 %    from Damir Bralić}
 %    \begin{macrocode}
+\def\bbl@multigraph@nj{n\nobreak j}
 \addto\extrascroatian{%
-  \bbl@frenchspacing}
+  \bbl@frenchspacing
+  \babel@save\bbl@multigraph@nj
+  \def\bbl@multigraph@nj{\iffontchar\font`ǌ{\color{green}ǌ}\else{\color{red}n\nobreak j}\fi}}
 \addto\noextrascroatian{%
   \bbl@nonfrenchspacing}
 %    \end{macrocode}
 % \end{macro}
 % \end{macro}
+%
+%    \begin{macrocode}
+\AtEndOfPackage{%
+  \RequirePackage{xcolor}
+  \RequirePackage{newunicodechar}
+  \newunicodechar{ǌ}{\bbl@multigraph@nj}}
+%    \end{macrocode}
 %
 %    \begin{macrocode}
 \ldf@finish{croatian}
