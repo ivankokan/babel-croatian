@@ -199,17 +199,12 @@
 %    used to cancel the actions of |\extrascroatian|.
 %
 %    For Croatian texts French spacing is switched on.\footnote{Recommendation
-%    from Damir Bralić} Respective pre-Croatian state is stored before that,
-%    and restored when Croatian is unselected.
+%    from Damir Bralić}
 %    \begin{macrocode}
 \addto\extrascroatian{%
-  \newif\ifbbl@fs@precroatian\bbl@fs@precroatianfalse
-  \ifnum\the\sfcode`\.=\@m
-    \bbl@fs@precroatiantrue
-  \fi
   \bbl@frenchspacing}
 \addto\noextrascroatian{%
-  \ifbbl@fs@precroatian\bbl@frenchspacing\else\bbl@nonfrenchspacing\fi}
+  \bbl@nonfrenchspacing}
 %    \end{macrocode}
 % \end{macro}
 % \end{macro}
